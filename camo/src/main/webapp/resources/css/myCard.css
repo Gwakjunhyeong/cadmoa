@@ -1,0 +1,378 @@
+@charset "utf-8";
+
+/* 브라우저 리셋*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+    
+}
+
+ul, ol li{
+    list-style: none;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.wrap{
+    width: 100%;
+    position: relative;
+    min-width: 1140px;
+}
+
+#header{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    /*  메인이미지를 헤더에 앱솔한 이유는?
+        position: absolute로 설정하면 부모에게서 독립하게되면서
+        자신의 내용만큼만 너비값을 가지게됨
+        그래서 너비값을 100%로 설정
+     */
+    z-index: 1000;
+    /* 
+        z-index 쓰는 이유는 우선순위로인해 헤더가 이미지 앞에안나와서(포지션쓰면 값이 0이됨
+        그래서 z-index에 값을줌
+      */
+}
+
+
+.headerIn{
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    height: 70px;
+}
+
+.headerIn .logo{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    
+}
+
+.headerIn .util{
+    display: flex;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+}
+
+.member{
+    display: flex;
+}
+
+.member , .login a, .join a{
+    color: #666;
+}
+
+.member ,.login a:hover, .join a:hover{
+    color: white;
+}
+
+.util .bar{
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color:#666;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.gnb{
+    position: relative;
+    margin-top: 80px;
+    height: 80px;
+}
+
+.gnb_in{
+    position: relative;
+    width: 1100px;
+    z-index: 100;
+
+}
+
+.gnb_in>ul{
+    display: flex;
+    justify-content: right;
+}
+
+.gnb_in>ul>li{
+    position: relative;
+}
+
+.gnb_in>ul>li>a{
+    display: block;
+    font-size: 20px;
+    line-height: 50px;
+    margin-left: 80px;
+    color: #333;
+}
+
+.gnb_in>ul>li>a:hover{
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.gnb_in>ul>li>.sub{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    z-index: 1;
+    display: none;
+    border-left: 1px solid #222;
+}
+
+.gnb_in>ul>li>.sub>ul{
+    padding: 5px 0;
+}
+
+.gnb_in>ul>li>.sub>ul>li{
+    text-align: right;
+    margin-right: 20px;
+}
+
+.gnb_in>ul>li>.sub>ul>li>a{
+    color: #999;
+    opacity: 0.8;
+    line-height: 25px;
+    /* letter-spacing: -0.8px; */
+    /* 글자 사이 간격을 설정 */
+}
+
+.gnb_in>ul>li>.sub>ul>li>a:hover{
+    color: #333;
+    font-weight: 500;
+}
+
+.gnbBg{
+    position: absolute;
+    width: 1100px;
+    margin: 0 auto;
+    height: 350px;
+    top: 50px;
+    left: 0;
+    background-color: rgb(240, 240, 240);
+    display: none;
+    z-index: 1;
+}
+
+
+
+
+/* 여기서부턴 검색 버튼창, #키워드  */
+
+
+
+/* #header -----------------------------------------------------------------------------------*/
+
+.mainBg{
+    position: relative;
+    overflow: hidden;
+    height: 130px;
+    margin-bottom: 60px;
+}
+
+.mImg{
+    position: absolute;
+    left: 50%;
+    top:0;
+    margin-left: -960px;
+
+}
+
+.cardr{
+    margin-bottom: 50px;
+}
+.cardr form{
+    display: flex;
+    justify-content: center;
+}
+.cardr h2{
+    font-size: 14px;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.cardr_In, .ccc {
+    text-align: center;
+}
+
+.cardr_In input{
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.card_registration_In{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.card_registration_In h2{
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.card_list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.card_list_In{
+    width: 296px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 20px;
+    border: 1px solid #222;
+    position: relative;
+}
+.card_list_In .plus{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*  
+        transform: translatehtml 요소를 이동하는 css 
+        -지정 요소 X 또는 Y축으로 이동
+    */
+}
+
+.card_list_In .plus button{
+    display: block;
+    color: #333;
+    font-size: 30px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #ccc;
+    padding: 18px 24px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.card_list_In .delete{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.card_list_In .delete input{
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+/* #container --------------------------------------------------------------------------*/
+
+
+#footer{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    border-top: 1px solid #666;
+    box-shadow: 3px 3px 5px #ccc;
+}
+
+.footerIn{
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.fLogo{
+    margin-bottom: 30px;
+}
+
+.fMenu{
+    margin-bottom: 30px;
+}
+
+.fMenu ul{
+    display: flex;
+}
+
+.fMenu ul li{
+    margin-right: 10px;
+}
+
+.fMenu li a{
+    display: block;
+    padding: 5px 15px;
+    color: #adaeb0;
+    border: 1px solid #808080;
+}
+
+.fInfo{
+    color: #adaeb0;
+    margin-bottom: 30px;
+}
+.fInfo span{
+    margin-right: 10px ;
+}
+
+.fInfo span a{
+    color: #adaeb0;
+}
+
+.copyright{
+    color: #adaeb0;
+}
+
+/*-------------- .fL */
+
+.fCs{
+    margin-bottom: 20px;
+    color:#adaeb0;
+}
+.fCs h3{
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.fCs .tel{
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.fCs .time{
+    margin-bottom: 20px;
+}
+
+.fSns ul{
+    display: flex;
+}
+
+.fSns ul li{
+    margin-right: 10px;
+}
+
+.goTop{
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    /* 다르게했음 */
+}

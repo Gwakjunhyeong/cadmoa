@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #111;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+input{
+    font-family: 'Noto Sans KR', sans-serif;
+    /* 인풋안에는 바디태그가 안먹힘 */
+    vertical-align: top;
+    outline-style: none;
+    border: 0;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+    width: 100%;
+    height: auto;
+    /* 높이 너비없으면 반응형에서 이상하게나옴 */
+}
+
+a{
+    text-decoration: none;
+}
+
+.hide{
+    position: absolute;
+    top: -99999px;
+    left: -99999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#wrap{
+    background : linear-gradient(#febc66, #ffffff);  
+    /* to left, #febc66 하면 저색상이 더찐해짐 */
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 120px;
+    padding-bottom: 180px;
+    min-width: 320px;
+
+}
+
+.logo{
+    text-align: center;
+    margin: 80px 0;
+}
+
+.logo a img{
+    width: 140px;
+}
+
+.box1{
+    background-color: #fff;
+    width: 600px;
+    margin: 0 auto;
+    padding: 50px 30px 70px 30px;
+    border-radius: 20px;
+    box-shadow: 0 1px 4px rgb(143, 132, 132);
+}
+
+.box1 label{
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    margin-bottom: 20px;
+
+}
+
+.box1 label input{
+    display: inline-block;
+    border: 1px solid #999;
+    /* margin-left:10px; */
+    width: 300px;
+    padding: 10px;
+    /* box-sizing: border-box; */
+    border-radius: 8px;
+}
+
+.box1{
+    margin-bottom: 90px;
+}
+
+h3{
+    text-align: center;
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 50px;
+}
+
+
+#wrap .button{
+    margin-left: 200px;
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 25px;
+    width: 200px;
+    cursor: pointer;
+}
+
+#footer{
+    width: 650px;
+    margin: 50px auto 0 auto;
+}
+
+.fMenu ul{
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    
+}
+
+.fMenu ul li{
+    margin-right: 10px;
+}
+
+.fMenu li a{
+    display: block;
+    padding: 5px 15px;
+    color: #adaeb0;
+}
+
+.fInfo{
+    color: #adaeb0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.fInfo span{
+    margin-right: 10px ;
+}
+
+.fInfo span a{
+    color: #adaeb0;
+}
+
+.copyright{
+    text-align: center;
+}

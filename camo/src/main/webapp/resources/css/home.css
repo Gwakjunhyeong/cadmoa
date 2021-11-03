@@ -1,0 +1,566 @@
+@charset "utf-8";
+
+/* 브라우저 리셋*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+    
+}
+
+ul, ol li{
+    list-style: none;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.wrap{
+    width: 100%;
+    position: relative;
+    min-width: 1140px;
+}
+
+#header{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    /*  메인이미지를 헤더에 앱솔한 이유는?
+        position: absolute로 설정하면 부모에게서 독립하게되면서
+        자신의 내용만큼만 너비값을 가지게됨
+        그래서 너비값을 100%로 설정
+     */
+    z-index: 1000;
+    /* 
+        z-index 쓰는 이유는 우선순위로인해 헤더가 이미지 앞에안나와서(포지션쓰면 값이 0이됨
+        그래서 z-index에 값을줌
+      */
+}
+
+
+.headerIn{
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    height: 70px;
+}
+
+.headerIn .logo{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    
+}
+
+.headerIn .util{
+    display: flex;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+}
+
+.member{
+    display: flex;
+}
+
+.member , .login a, .join a{
+    color: #666;
+}
+
+.member ,.login a:hover, .join a:hover{
+    color: white;
+}
+
+.util .bar{
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color:#666;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.gnb{
+    position: relative;
+    margin-top: 80px;
+    height: 80px;
+}
+
+
+.gnb_in{
+    position: relative;
+    width: 1100px;
+    z-index: 100;
+
+}
+
+.gnb_in .sub_c{
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    z-index: 1;
+    display: none;
+}
+
+.gnb_in .sub_cimg img{
+    width: 240px;
+}
+
+
+.gnb_in>ul{
+    display: flex;
+    justify-content: right;
+}
+
+.gnb_in>ul>li{
+    position: relative;
+}
+
+.gnb_in>ul>li>a{
+    display: block;
+    font-size: 20px;
+    line-height: 50px;
+    margin-left: 80px;
+    color: #333;
+}
+
+.gnb_in>ul>li>a:hover{
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.gnb_in>ul>li>.sub{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    z-index: 1;
+    display: none;
+    border-left: 1px solid #222;
+}
+
+.gnb_in>ul>li>.sub>ul{
+    padding: 5px 0;
+}
+
+.gnb_in>ul>li>.sub>ul>li{
+    text-align: right;
+    margin-right: 20px;
+}
+
+.gnb_in>ul>li>.sub>ul>li>a{
+    color: #999;
+    opacity: 0.8;
+    line-height: 25px;
+    /* letter-spacing: -0.8px; */
+    /* 글자 사이 간격을 설정 */
+}
+
+.gnb_in>ul>li>.sub>ul>li>a:hover{
+    color: #333;
+    font-weight: 500;
+}
+
+.gnbBg{
+    position: absolute;
+    width: 1100px;
+    margin: 0 auto;
+    height: 350px;
+    top: 50px;
+    left: 0;
+    background-color: rgba(240, 240, 240, 0.8);
+    display: none;
+    z-index: 1;
+}
+
+
+
+
+/* 여기서부턴 검색 버튼창, #키워드  */
+.main_search{
+    position: absolute;
+    top: 240px;
+    width: 800px;
+    left: 50%;
+    margin-left: -400px;
+
+}
+
+.ip_btn{ display: flex; }
+
+.input_wrap .input_box{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 750px;
+    font-size: 24px;
+    line-height: 1em;
+    color: white;
+    padding: 10px;
+}
+
+.search_btn{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.search_btn img{
+    width: 20px;
+}
+
+.main_search_word::before{
+    content: "";
+    width: 800px;
+    border-top: 3px solid white;
+    padding-top: 40px;
+
+}
+
+.main_search_word{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main_search_word li{
+    text-align: center;
+}
+
+.main_search_word li a{
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    line-height: 1em;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin: 0 10px;
+}
+
+
+/* #header -----------------------------------------------------------------------------------*/
+
+.mainBg{
+    position: relative;
+    overflow: hidden;
+    height: 800px;
+    margin-bottom: 60px;
+}
+
+.mImg{
+    position: absolute;
+    left: 50%;
+    top:0;
+    margin-left: -960px;
+
+}
+
+/* .mainBg */
+
+
+.best{
+    width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 50px; 
+    position: relative;
+}
+
+.best h2 a{
+    display: block;
+    text-align: center;
+    color: #333;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.best h2 a span{
+    font-weight: 400;
+}
+
+/* 
+    여기서부터 html에 클래스로 지정하지않은 .slick 클래스가 나옵니다.
+    js로 slick연결하면 임의로 클래스를 만들어서 작동시키게 한거같습니다.
+    html에 .slick 클래스가 없는점 참고바랍니다.
+    볼 수 있는 방법은 slick연결후 개발자도구F12로 확인해야합니다.
+*/
+
+.slick-dots {
+    display: flex;
+    justify-content: center;    
+    margin-top: 30px;
+    top: 400px !important; 
+    left:600px !important;
+}
+/* 여기서 !important: 다른 것보다 가장 최우선으로 적용해라 정도의 의미!!!*/
+
+.slick-dots li {
+    margin: 0 5px ;
+}   
+
+.slick-dots button {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(180,180,180, 0.3);           
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.slick-dots li.slick-active button {
+    background-color: rgba(180,180,180, 0.9);
+}   
+/* --여기까지가 .slick-dots 버튼 */
+
+
+/* 이거는 나두겠습니다.
+    적용하면 버튼이 한개밖에안나와서 어떤걸 적용해야할거같습니다.
+    .slick-arrow{
+    display: inline-block;
+    position: relative;
+    top: 220px;
+    z-index: 500;
+    color: #fff;
+    font-size: 20px;
+    } 
+*/
+
+.slick-prev, .slick-next {
+    position: absolute;
+    border: 0;
+    background: none;
+    z-index: 1;
+    top: 45%;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    text-indent: -99999px;
+}
+
+.slick-prev { 
+    background-image: url(../img/icon_prev.png);
+    background-position: 4px 25px;
+    left: -75px; 
+}
+
+.slick-next { 
+    background-image: url(../img/icon-next.png);
+    background-position: 14px 25px;
+    right: -75px; 
+}
+
+.slick-prev:after, .slick-next:after{
+    content: "";
+    display: block;
+    position:relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(180,180,180, 0.5); 
+    background-repeat: no-repeat;
+}
+
+.slick-prev:hover:after {
+    content: "";
+    background-color: #7e7e7e;
+    background-image: url(../img/icon_prev.png);
+    background-position: 4px 8px;
+}
+
+.slick-next:hover:after {
+    content: "";
+    background-color: #7e7e7e;
+    background-image: url(../img/icon-next.png);
+    background-position: 14px 8px;
+}
+
+.best li{ position: relative; }
+
+.best .ranking{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/* .best */
+
+
+
+.banner{
+    margin-bottom: 55px;
+}
+
+.banner_In{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* .banner */
+
+
+
+.board{
+    width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.bo2 .bar{
+    width: 1px;
+    height: 160px;
+    background-color:#666;
+    margin-top: 100px;
+}
+
+.bo2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bo2 h2 a{
+    display: block;
+    font-weight: 500;
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.bo2 .notice, .faq{
+    width: 530px;
+    padding: 35px 0 45px 0;
+    line-height: 30px;
+    margin-bottom: 40px;
+}
+
+.notice li, .faq li{
+    display: flex;
+    margin-bottom: 7px;
+    color: #333;
+    justify-content: space-between;
+    text-align: justify;
+    padding: 2px 20px;
+    box-sizing: border-box;
+
+} 
+
+.notice li a, .faq li a{
+    color: #666;
+}
+
+
+/* .boder */
+/* #container --------------------------------------------------------------------------*/
+
+
+#footer{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    border-top: 1px solid #666;
+    box-shadow: 3px 3px 5px #ccc;
+}
+
+.footerIn{
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.fLogo{
+    margin-bottom: 30px;
+}
+
+.fMenu{
+    margin-bottom: 30px;
+}
+
+.fMenu ul{
+    display: flex;
+}
+
+.fMenu ul li{
+    margin-right: 10px;
+}
+
+.fMenu li a{
+    display: block;
+    padding: 5px 15px;
+    color: #adaeb0;
+    border: 1px solid #808080;
+}
+
+.fInfo{
+    color: #adaeb0;
+    margin-bottom: 30px;
+}
+.fInfo span{
+    margin-right: 10px ;
+}
+
+.fInfo span a{
+    color: #adaeb0;
+}
+
+.copyright{
+    color: #adaeb0;
+}
+
+/*-------------- .fL */
+
+.fCs{
+    margin-bottom: 20px;
+    color:#adaeb0;
+}
+.fCs h3{
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.fCs .tel{
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.fCs .time{
+    margin-bottom: 20px;
+}
+
+.fSns ul{
+    display: flex;
+}
+
+.fSns ul li{
+    margin-right: 10px;
+}
+
+.goTop{
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    /* 다르게했음 */
+}
